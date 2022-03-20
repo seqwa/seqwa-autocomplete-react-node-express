@@ -10,11 +10,6 @@ app.get('/', (req, res) => {
     res.sendFile(path + "index.html");
 });
 
-// create a GET route
-app.get('/express_backend', (req, res) => {
-    res.send({ express: 'YOUR EXPRESS BACKEND IS CONNECTED TO REACT' });
-});
-
 app.get('/api/autocomplete', async (req, res) => {
     const input = req.query;
     const options = {
@@ -45,13 +40,10 @@ app.get('/api/autocomplete', async (req, res) => {
             })
         }
     ).end();
-    // const response = await autocompleteResponse.json();
-    // res.status(200).json(response);
-
 });
 
 
 
 app.listen(port, () => {
-    console.log(`Example app listening at http://localhost:${port}`);
+    console.log(`App listening at http://localhost:${port}`);
 });
